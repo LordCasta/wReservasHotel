@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace wReservasHotel
 {
@@ -40,20 +41,24 @@ namespace wReservasHotel
         }
         public Reserva BuscarReserva(int habitacion, DateTime fechaReserva)
         {
-            return reservas.FirstOrDefault(r => r.Habitacion == habitacion && r.FechaReserva == fechaReserva);
+            return reservas.FirstOrDefault(r => r.Habitacion == habitacion && r.FechaReserva.Date == fechaReserva.Date); ;
         }
-        public void EditarReserva(int numeroHabitacion, DateTime fechaReserva, string nuevoCliente, int nuevaDuracion)
+        public void EditarReserva(int numeroHabitacion, DateTime fechaReserva, string nuevoCliente, int nuevaDuracion, DateTime nuevaFecha, int nuevaHabitacion, string nuevoTipo)
         {
             var reserva = BuscarReserva(numeroHabitacion, fechaReserva);
 
             if (reserva != null)
             {
                 reserva.Nombre = nuevoCliente;
-                reserva.Noches = nuevaDuracion;
+                reserva.Noches = nuevaDuracion;   
+                reserva.Habitacion = nuevaHabitacion;
+                reserva.FechaReserva = nuevaFecha;
+
+
             }
             else
             {
-                throw new Exception("No se encontró la reserva.");
+                MessageBox.Show("La reserva no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

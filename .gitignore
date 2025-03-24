@@ -1,0 +1,26 @@
+bin/
+obj/
+*.log
+*.exe
+*.dll
+*.pdb
+*.appx
+*.appxbundle
+# Archivos de configuración de usuario de Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+# Archivos de paquetes y dependencias
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+# Configuración de Rider y ReSharper
+.idea/
+*.DotSettings.user
+resharper.xml
+# Archivos de logs y temporales
+logs/
+temp/

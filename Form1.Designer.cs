@@ -43,16 +43,22 @@
             this.btnReserva = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.editarNombre = new System.Windows.Forms.TextBox();
+            this.editarFecha = new System.Windows.Forms.DateTimePicker();
+            this.editarHabitacion = new System.Windows.Forms.TextBox();
+            this.editarTipo = new System.Windows.Forms.ComboBox();
+            this.editarNoches = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 9);
+            this.label1.Location = new System.Drawing.Point(18, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(269, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Reservas";
+            this.label1.Text = "Reservar o seleccionar (Habitacion y fecha)";
             // 
             // label2
             // 
@@ -124,7 +130,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(13, 274);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 20);
+            this.label6.Size = new System.Drawing.Size(54, 16);
             this.label6.TabIndex = 9;
             this.label6.Text = "Noches";
             // 
@@ -138,10 +144,11 @@
             // listBoxReservas
             // 
             this.listBoxReservas.FormattingEnabled = true;
+            this.listBoxReservas.HorizontalScrollbar = true;
             this.listBoxReservas.ItemHeight = 16;
-            this.listBoxReservas.Location = new System.Drawing.Point(432, 67);
+            this.listBoxReservas.Location = new System.Drawing.Point(674, 67);
             this.listBoxReservas.Name = "listBoxReservas";
-            this.listBoxReservas.Size = new System.Drawing.Size(332, 212);
+            this.listBoxReservas.Size = new System.Drawing.Size(373, 212);
             this.listBoxReservas.TabIndex = 11;
             // 
             // btnReserva
@@ -158,30 +165,83 @@
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEditar.Location = new System.Drawing.Point(154, 343);
+            this.btnEditar.Location = new System.Drawing.Point(444, 343);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(115, 38);
             this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEliminar.Location = new System.Drawing.Point(317, 343);
+            this.btnEliminar.Location = new System.Drawing.Point(205, 343);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(110, 38);
             this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // editarNombre
+            // 
+            this.editarNombre.Location = new System.Drawing.Point(418, 67);
+            this.editarNombre.Name = "editarNombre";
+            this.editarNombre.Size = new System.Drawing.Size(214, 22);
+            this.editarNombre.TabIndex = 15;
+            // 
+            // editarFecha
+            // 
+            this.editarFecha.Location = new System.Drawing.Point(417, 120);
+            this.editarFecha.Name = "editarFecha";
+            this.editarFecha.Size = new System.Drawing.Size(214, 22);
+            this.editarFecha.TabIndex = 16;
+            // 
+            // editarHabitacion
+            // 
+            this.editarHabitacion.Location = new System.Drawing.Point(417, 170);
+            this.editarHabitacion.Name = "editarHabitacion";
+            this.editarHabitacion.Size = new System.Drawing.Size(165, 22);
+            this.editarHabitacion.TabIndex = 17;
+            // 
+            // editarTipo
+            // 
+            this.editarTipo.FormattingEnabled = true;
+            this.editarTipo.Location = new System.Drawing.Point(417, 217);
+            this.editarTipo.Name = "editarTipo";
+            this.editarTipo.Size = new System.Drawing.Size(214, 24);
+            this.editarTipo.TabIndex = 18;
+            // 
+            // editarNoches
+            // 
+            this.editarNoches.Location = new System.Drawing.Point(420, 270);
+            this.editarNoches.Name = "editarNoches";
+            this.editarNoches.Size = new System.Drawing.Size(101, 22);
+            this.editarNoches.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(488, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "EDITAR";
             // 
             // formReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1059, 450);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.editarNoches);
+            this.Controls.Add(this.editarTipo);
+            this.Controls.Add(this.editarHabitacion);
+            this.Controls.Add(this.editarFecha);
+            this.Controls.Add(this.editarNombre);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnReserva);
@@ -199,6 +259,7 @@
             this.Controls.Add(this.label1);
             this.Name = "formReservas";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.formReservas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +282,12 @@
         private System.Windows.Forms.Button btnReserva;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox editarNombre;
+        private System.Windows.Forms.DateTimePicker editarFecha;
+        private System.Windows.Forms.TextBox editarHabitacion;
+        private System.Windows.Forms.ComboBox editarTipo;
+        private System.Windows.Forms.TextBox editarNoches;
+        private System.Windows.Forms.Label label7;
     }
 }
 

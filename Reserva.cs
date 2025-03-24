@@ -36,5 +36,10 @@ namespace wReservasHotel
 
         public abstract double CalcularCosto(int noches);
         public abstract double CalcularCosto(int noches, double tarifa);
+
+        public override string ToString()
+        {
+            return $"{Habitacion} | {Nombre} | {FechaReserva} | {Noches}";
+        }
     }
 }

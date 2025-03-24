@@ -31,7 +31,7 @@ namespace wReservasHotel
 
         public override double CalcularCosto(int noches, double tarifa)
         {
-            if(!(tarifa >= 0))
+            if(!(tarifa > 0))
             {
                 throw new ArgumentException("La tarifa debe ser mayor a 0");
             }
